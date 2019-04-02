@@ -18,6 +18,6 @@ w, h = img1.size
 for i in range(0,w):
     for j in range(0,h):
         if img1.getpixel((i,j)) == img2.getpixel((i,j)):
-            img2.putpixel((i,j),(0,0,0,255))
+            img2.putpixel((i,j),255)
 
 img2.save("ans_two.png")
