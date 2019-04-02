@@ -6,7 +6,18 @@
 #################################################
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
-import PIL
+
 from PIL import ImageColor
 from PIL import Image
-print(type(ImageColor.getcolor('red','RGBA')))
+# print(type(ImageColor.getcolor('red','RGBA')))
+img1 = Image.open("data/lena.png")
+img2 = Image.open("data/lena_modified.png")
+
+w, h = img1.size
+
+for i in range(0,w):
+    for j in range(0,h):
+        if img1.getpixel((i,j)) == img2.getpixel((i,j)):
+            img2.putpixel((i,j),(0,0,0,255))
+
+img2.save("ans_two.png")
